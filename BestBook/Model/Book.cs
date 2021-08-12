@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using BestBook.CustomAttributes;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 #nullable disable
@@ -33,6 +35,10 @@ namespace BestBook.Model
         [StringLength(4000)]
         public string PicLink { get; set; }
         [Column(TypeName = "decimal(3, 2)")]
+
+        [NotMapped]
+        [DisplayName("Upload File")]
+        public IFormFile ImageFile { get; set; }
         public decimal? AvgStar { get; set; }
 
         [ForeignKey(nameof(AuthorId))]
