@@ -1,16 +1,16 @@
-﻿using BestBook.Model;
+﻿using Hastprogrammet.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BestBook.CustomAttributes
+namespace Hastprogrammet.CustomAttributes
 {
     public class ValidateAuthorIdExistInDb:ValidationAttribute
     {
         public new string ErrorMessage { get; set; } = "Invalid author. Use the search function to find your author.";
-        private BookContext Context { get; set; } = new BookContext();        
+        private HorseContext Context { get; set; } = new HorseContext();        
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {            
             int id = (int)value;

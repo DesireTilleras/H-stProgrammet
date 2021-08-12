@@ -1,10 +1,10 @@
-﻿using BestBook.Model;
+﻿using Hastprogrammet.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BestBook.ViewModels
+namespace Hastprogrammet.ViewModels
 {
     public class BookAuthor
     {

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace BestBook.Model
+namespace Hastprogrammet.Model
 {
     [Table("Genre")]
     public partial class Genre

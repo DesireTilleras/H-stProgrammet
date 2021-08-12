@@ -1,16 +1,16 @@
-﻿using BestBook.Model;
+﻿using Hastprogrammet.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BestBook.Controllers
+namespace Hastprogrammet.Controllers
 {
-    public class AuthorController : Controller
+    public class HorseController : Controller
     {
-        public BookContext Context { get; set; }
-        public AuthorController(BookContext context)
+        public HorseContext Context { get; set; }
+        public HorseController(HorseContext context)
         {
             this.Context = context;
         }
