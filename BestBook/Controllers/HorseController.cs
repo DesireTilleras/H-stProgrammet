@@ -18,7 +18,7 @@ namespace Hastprogrammet.Controllers
         {
             return View();
         }
-        public IActionResult AddAuthor()
+        public IActionResult AddHorse()
         {
             return View();
         }

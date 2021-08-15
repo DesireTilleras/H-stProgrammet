@@ -6,7 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Session;
-namespace BestBook.Controllers
+
+namespace Hastprogrammet.Controllers
 {
     public class EconomyController : Controller
     {
@@ -40,21 +41,18 @@ namespace BestBook.Controllers
 
         public IActionResult SearchEconomy(string SearchText)
         {
-            var books = Context.Economies.Where(b => b.Description.Contains(SearchText));
-            return View(books);
+            var posts = Context.Economies.Where(b => b.Description.Contains(SearchText));
+            return View(posts);
         }
-        //public IActionResult BookDetails(int id)
-        //{
-        //    var reviewList = Context.Reviews.Where(b => b.BookId == id).ToList();
-        //    ViewData["reviews"] = reviewList;
+        public IActionResult EconomyDetails(int id)
+        {
+            var economyHorseID = Context.Economies.Where(b => b.Id == id).Select(b => b.HorseId).First();
+            var horse = Context.Horses.First(a => a.Id == economyHorseID);
+            ViewData["horse"] = horse.Name;
+            var post = Context.Economies.FirstOrDefault(b => b.Id == id);
 
-        //    var bookAuthorID = Context.Books.Where(b => b.Id == id).Select(b => b.AuthorId).First();
-        //    var horse = Context.Horses.First(a => a.Id == bookAuthorID);
-        //    ViewData["horse"] = horse.Name;
-        //    var book = Context.Books.FirstOrDefault(b => b.Id == id);
-
-        //    return View(book);
-        //}
+            return View(post);
+        }
         //public IActionResult DeleteBook(int? id)
         //{
         //    if (id == null || id == 0)

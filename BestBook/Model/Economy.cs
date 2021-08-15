@@ -31,7 +31,7 @@ namespace Hastprogrammet.Model
         public int? HorseId { get; set; }
  
         [ForeignKey(nameof(HorseId))]
-        [InverseProperty("Horses")]
+        [InverseProperty("Economies")]
         public virtual Horse Horse { get; set; }
 
         

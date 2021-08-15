@@ -13,7 +13,7 @@ namespace Hastprogrammet.Model
     {
         public Horse()
         {
-            Economies = new HashSet<Economy>();
+            //Economies = new HashSet<Economy>();
         }
 
         [Key]
