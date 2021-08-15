@@ -1,11 +1,11 @@
-﻿@model Author
+﻿@model Horse
 @{
     Layout = "_Layout";
 }
 
 
 <h1 style="text-align:center">@Model.Name</h1>
-<p style="text-align:center">Home town: @Model.HomeTown</p>
+<p style="text-align:center">Home town: @Model.Height</p>
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="row justify-content-center" style="padding-top:1vh">
@@ -16,16 +16,12 @@
 </div>
     <div class="row justify-content-center" style="padding-top:3vh">
       
-            @foreach (var book in ViewData["bookList"] as IEnumerable<Book>)
+            @foreach (var post in ViewData["bookList"] as IEnumerable<Economy>)
             {
                 <div class="card" style="width:60vh;max-height:20vh;">
                     <div class="card-header">
                         <div class="col">
-                            <img class="rounded" src="@book.PicLink" width="50" height="60" style="border:1px solid black" />
-                            <b class="text-info">@book.Name</b>
-                        </div>
-                        <div class="col" style="text-align:right;font-size:10px;">
-                            Rating: @book.AvgStar
+                            <b class="text-info">@post.Description</b>
                         </div>
                     </div>
                 </div>

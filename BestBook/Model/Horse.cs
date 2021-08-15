@@ -8,12 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hastprogrammet.Model
 {
-    [Table("Author")]
-    public partial class Author
+    [Table("Horse")]
+    public partial class Horse
     {
-        public Author()
+        public Horse()
         {
-            Books = new HashSet<Book>();
+            Economies = new HashSet<Economy>();
         }
 
         [Key]
@@ -23,9 +23,12 @@ namespace Hastprogrammet.Model
         [StringLength(64)]
         public string Name { get; set; }
         [StringLength(64)]
-        public string HomeTown { get; set; }
+        public string Height { get; set; }
+        [StringLength(64)]
+        public string BirthYear { get; set; }
+        [StringLength(64)]
 
-        [InverseProperty(nameof(Book.Author))]
-        public virtual ICollection<Book> Books { get; set; }
+        [InverseProperty(nameof(Economy.Horse))]
+        public virtual ICollection<Economy> Economies { get; set; }
     }
 }

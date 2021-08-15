@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Author>
+﻿@model IEnumerable<Horse>
 @{
     Layout = "";
 }
@@ -10,15 +10,15 @@
 
 @if (Model != null)
 {
-    @foreach (var author in Model)
+    @foreach (var horse in Model)
     {
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <b>@author.Name</b> <br/>@author.HomeTown
+                    <b>@horse.Name</b> <br/>@horse.Height
                 </div>
                 <div class="col">
-                    <input type="submit" value="Details" onclick="location.href='@Url.Action("AuthorDetails", "Author", new {id=author.Id })'">
+                    <input type="submit" value="Details" onclick="location.href='@Url.Action("HorseDetails", "Horse", new {id=horse.Id })'">
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Author>
+﻿@model IEnumerable<Horse>
 @{
     Layout = "";
 }
@@ -8,10 +8,10 @@
 </head>
 
 <div class="list-group col-6">
-    @foreach (var author in Model)
+    @foreach (var horse in Model)
     {
-        <button type="button" class="list-group-item list-group-item-action" aria-current="true" onclick="parent.SendAuthor('@author.Id')">
-            @author.Name
+        <button type="button" class="list-group-item list-group-item-action" aria-current="true" onclick="parent.SendAuthor('@horse.Id')">
+            @horse.Name
         </button>
     }
 

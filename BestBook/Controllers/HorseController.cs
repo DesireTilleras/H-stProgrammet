@@ -24,49 +24,74 @@ namespace Hastprogrammet.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddAuthor(Author author)
+        public IActionResult AddHorse(Horse horse)
         {
             if (ModelState.IsValid)
             {
-                Context.Authors.Add(author);
+                Context.Horses.Add(horse);
                 Context.SaveChanges();
                 TempData["message"] = "Author added to database";
                 return RedirectToAction("Index", "Home");
             }
-            return View(author);
+            return View(horse);
 
         }
         public IActionResult AuthorSearch(string SearchText)
         {
-            var authors = Context.Authors.Where(a => a.Name.Contains(SearchText));
+            var authors = Context.Horses.Where(a => a.Name.Contains(SearchText));
             return View(authors);
         }
-        public IActionResult SearchAuthor(string name)
+        public IActionResult SearchHorse(string name)
         {            
-            var authors = Context.Authors.ToList();
+            var authors = Context.Horses.ToList();
             if (name != null)
             {
-                authors = Context.Authors.Where(a => a.Name.Contains(name)).ToList();
+                authors = Context.Horses.Where(a => a.Name.Contains(name)).ToList();
             }
             
             return View(authors);
         }
-        public IActionResult AuthorDetails(int id)
+        public IActionResult HorseDetails(int id)
         {
-            var author = Context.Authors.FirstOrDefault(b => b.Id == id);
-            var books = Context.Books.Where(b => b.AuthorId == id).ToList();
-            ViewData["bookList"] = books;
-
-            return View(author);
+            var horse = Context.Horses.FirstOrDefault(b => b.Id == id);
+            return View(horse);
 
         }
-        public IActionResult EditAuthor(int? id)
+        //public IActionResult EditAuthor(int? id)
+        //{
+        //    if (id == null || id == 0)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var author = Context.Authors.Find(id);
+        //    if (author == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(author);
+        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        ////public IActionResult EditAuthor(Author newAuthor)
+        ////{
+        ////    if (ModelState.IsValid)
+        ////    {
+        ////        var author = Context.Authors.Find(newAuthor.Id);
+        ////        author.Name = newAuthor.Name;
+        ////        author.HomeTown = newAuthor.HomeTown;
+        ////        Context.Authors.Update(author);
+        ////        Context.SaveChanges();
+        ////        return RedirectToAction("AuthorDetails", "Author", new { id = author.Id });
+        ////    }
+        ////    return View(newAuthor);
+        //}
+        public IActionResult DeleteHorse(int? id)
         {
             if (id == null || id == 0)
             {
                 return NotFound();
             }
-            var author = Context.Authors.Find(id);
+            var author = Context.Horses.Find(id);
             if (author == null)
             {
                 return NotFound();
@@ -75,44 +100,16 @@ namespace Hastprogrammet.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditAuthor(Author newAuthor)
+        public IActionResult DeleteHorsePost(int? id)
         {
-            if (ModelState.IsValid)
-            {
-                var author = Context.Authors.Find(newAuthor.Id);
-                author.Name = newAuthor.Name;
-                author.HomeTown = newAuthor.HomeTown;
-                Context.Authors.Update(author);
-                Context.SaveChanges();
-                return RedirectToAction("AuthorDetails", "Author", new { id = author.Id });
-            }
-            return View(newAuthor);
-        }
-        public IActionResult DeleteAuthor(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            var author = Context.Authors.Find(id);
-            if (author == null)
-            {
-                return NotFound();
-            }
-            return View(author);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteAuthorPost(int? id)
-        {
-            var author = Context.Authors.Find(id);
-            if (author == null)
+            var horse = Context.Horses.Find(id);
+            if (horse == null)
             {
                 return NotFound();
             }            
-            Context.Authors.Remove(author);
+            Context.Horses.Remove(horse);
             Context.SaveChanges();
-            TempData["message"] = "Author removed from database";
+            TempData["message"] = "Horse removed from database";
             return RedirectToAction("Index", "Home");
         }
         //[HttpPost]

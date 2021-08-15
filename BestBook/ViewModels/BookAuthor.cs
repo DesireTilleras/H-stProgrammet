@@ -8,8 +8,8 @@ namespace Hastprogrammet.ViewModels
 {
     public class BookAuthor
     {
-        public List<Author> Authors { get; set; } = new List<Author>();
-        public List<Book> Books { get; set; } = new List<Book>();
+        public List<Horse> Horses { get; set; } = new List<Horse>();
+        public List<Economy> Economies { get; set; } = new List<Economy>();
 
     }
 }

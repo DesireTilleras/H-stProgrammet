@@ -1,6 +1,6 @@
 using System;
 
-namespace BestBook.Models
+namespace Hastprogrammet.Models
 {
     public class ErrorViewModel
     {

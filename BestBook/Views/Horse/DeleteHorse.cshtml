@@ -1,10 +1,10 @@
-﻿@model Author
+﻿@model Horse
 
-<form method="post" asp-action="DeleteAuthorPost">
+<form method="post" asp-action="DeleteHorsePost">
     <div class="border p-3">
         <input asp-for="Id" hidden />
         <div class="form-group row">
-            <h2 class="text-info pl-3">Delete Author</h2>
+            <h2 class="text-info pl-3">Delete Horse</h2>
         </div>
         <div class="row">
             <div class="col-8">
@@ -18,10 +18,10 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="HomeTown"></label>
+                        <label asp-for="Height"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="HomeTown" disabled class="form-control" />
+                        <input asp-for="Height" disabled class="form-control" />
                     </div>
                 </div>
 

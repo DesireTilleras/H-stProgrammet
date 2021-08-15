@@ -1,0 +1,27 @@
+﻿@model Economy
+@{
+    Layout = "_Layout";
+
+}
+
+<div class="container justify-content-center">
+    <div class="row justify-content-center">
+        <h1 class="text-info">@Model.Description</h1>
+        <br />
+    </div>
+    <div class="row justify-content-md-center">
+        <div style="width:300px">
+            <h3>Author: @ViewData["author"].ToString()</h3>
+            @Model.Description
+        </div>
+    </div>
+    <div class="row justify-content-center" style="padding-top:2vh">
+        <input type="submit" class="btn btn-outline-info" value="Add Review" onclick="location.href='@Url.Action("CreateReview", "Review", new { bookId = Model.Id})'" />        
+        <input type="submit" class="btn btn-outline-info" name="editBook" value="Edit Book" onclick="location.href='@Url.Action("EditBook", "Book", new { id = Model.Id})'" />
+        <input type="submit" class="btn btn-outline-danger" name="deleteBook" value="Delete Book" onclick="location.href='@Url.Action("DeleteBook", "Book", new { id = Model.Id})'" />
+    </div>
+</div>
+
+
+
+

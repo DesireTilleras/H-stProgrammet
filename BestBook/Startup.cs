@@ -1,4 +1,4 @@
-using BestBook.Model;
+using Hastprogrammet.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +25,7 @@ namespace BestBook
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BookContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));//la till bookcontext för dependency injection(appsettings.json)
+            services.AddDbContext<HorseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));//la till bookcontext för dependency injection(appsettings.json)
             
             services.AddControllersWithViews();
         }

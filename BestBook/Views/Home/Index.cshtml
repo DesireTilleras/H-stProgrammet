@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Genre>
+﻿@model IEnumerable<Horse>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -42,15 +42,7 @@
                 <h5 class="modal-title">Genres</h5>
                 <span class="close">&times;</span>
             </div>
-            <div class="modal-body">
-                @foreach (var genre in Model)
-                {
-                    <div class="col-md-auto" style="text-align:center">
-                        <a asp-action="BooksByGenre" asp-route-id="@genre.Id">@genre.GenreName</a>
-                    </div>
-                }
-            </div>
-            <div class="modal-footer">
+                       <div class="modal-footer">
                 <button class="btn btn-danger" id="closebtn">Close</button>
             </div>
         </div>

@@ -1,14 +1,14 @@
-﻿@model Author
+﻿@model Horse
 @{
     Layout = "_Layout";
 }
-<form method="post" asp-action="AddAuthor">
+<form method="post" asp-action="AddHorse">
     <div class="border p-3">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <h2 class="text-info pl-3">Add Author</h2>
+                    <h2 class="text-info pl-3">Add Horse</h2>
                     <div class="col-4">
                         <div>
                             <label asp-for="Name">Name:</label>
@@ -16,13 +16,13 @@
                             <span asp-validation-for="Name" class="text-danger"></span>
                         </div>                        
                         <div>
-                            <label asp-for="HomeTown">Home Town:</label>
-                            <input asp-for="HomeTown" class="form-control" />
-                            <span asp-validation-for="HomeTown" class="text-danger"></span>
+                            <label asp-for="Height">Home Town:</label>
+                            <input asp-for="Height" class="form-control" />
+                            <span asp-validation-for="Height" class="text-danger"></span>
                         </div>   
                         <div>
                             <br />
-                            <button class="btn btn-primary">Add Author</button>
+                            <button class="btn btn-primary">Add Horse</button>
                         </div>
                         
                     </div>
