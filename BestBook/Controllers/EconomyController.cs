@@ -22,6 +22,10 @@ namespace Hastprogrammet.Controllers
             return View();
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -32,7 +36,7 @@ namespace Hastprogrammet.Controllers
             {                
                 Context.Economies.Add(economy);
                 Context.SaveChanges();
-                TempData["message"] = "Book added to database";
+                TempData["message"] = "Post added to database";
                 return RedirectToAction("Index","Home");
             }
 

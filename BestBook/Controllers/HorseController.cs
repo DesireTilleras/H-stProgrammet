@@ -30,7 +30,7 @@ namespace Hastprogrammet.Controllers
             {
                 Context.Horses.Add(horse);
                 Context.SaveChanges();
-                TempData["message"] = "Author added to database";
+                TempData["message"] = "Horse added to database";
                 return RedirectToAction("Index", "Home");
             }
             return View(horse);
@@ -43,13 +43,13 @@ namespace Hastprogrammet.Controllers
         }
         public IActionResult SearchHorse(string name)
         {            
-            var authors = Context.Horses.ToList();
+            var horses = Context.Horses.ToList();
             if (name != null)
             {
-                authors = Context.Horses.Where(a => a.Name.Contains(name)).ToList();
+                horses = Context.Horses.Where(a => a.Name.Contains(name)).ToList();
             }
             
-            return View(authors);
+            return View(horses);
         }
         public IActionResult HorseDetails(int id)
         {

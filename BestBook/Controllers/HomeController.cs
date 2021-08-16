@@ -22,10 +22,6 @@ namespace Hastprogrammet.Controllers
             _context = context;
             _logger = logger;
         }
-        public IActionResult about()
-        {            
-            return View();
-        }
         public IActionResult Index()
         {
             ViewBag.message = TempData["message"];

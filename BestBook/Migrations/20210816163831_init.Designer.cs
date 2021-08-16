@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hastprogrammet.Migrations
 {
     [DbContext(typeof(HorseContext))]
-    [Migration("20210815133227_init")]
+    [Migration("20210816163831_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,9 @@ namespace Hastprogrammet.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ID")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()

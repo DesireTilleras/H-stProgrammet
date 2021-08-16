@@ -17,61 +17,59 @@
                             <span asp-validation-for="Description" class="text-danger"></span>
                         </div>
                         <div>
-                            <label asp-for="Description">Description:</label>
-                            <textarea asp-for="Description" class="form-control"></textarea>
-                            <span asp-validation-for="Description" class="text-danger"></span>
+                            <label asp-for="Amount">Amount:</label>
+                            <textarea asp-for="Amount" class="form-control"></textarea>
+                            <span asp-validation-for="Amount" class="text-danger"></span>
                         </div>
-                       
+
 
                         <div class="col p-0">
                             <label>Search Horse:</label>
                             <input type="text" id="horseName" class="form-control" value="" />
                         </div>
-                        
+
                         <button type="button" class="btn btn-outline-info" onclick="urlChange()">Search</button>
-                        
-
-
-                        @*<div class="col p-0">
+                        <div class="col p-0">
                             <label asp-for="HorseId">
-                                Author Id:
-                                <p style="font-size: 10px">Automatically fills up when an author is selected from the search result.</p>
+                                Horse Id:
+                                <p style="font-size: 10px">Automatically fills up when an horse is selected from the search result.</p>
                             </label>
-                            <input type="text" id="authorId" asp-for="HorseId" readonly class="form-control" value="" />
+                            <input type="text" id="horseId" asp-for="HorseId" readonly class="form-control" value="" />
                             <span asp-validation-for="HorseId" class="text-danger"></span>
-                        </div>*@
-
-
-
-                       
-                </div>
+                        </div>
+                        <div>
+                            <br />
+                            <button class="btn btn-primary">Add Horse</button>
+                        </div>
+                    </div>
                 <div class="col custom-class">
-                    <iframe id="AuthorIframe" src="" style="width:100%;height:50vh;overflow:scroll;border: 1px solid black;">
+                    <iframe id="HorseIframe" src="" style="width:100%;height:50vh;overflow:scroll;border: 1px solid black;">
                     </iframe>
 
                 </div>
+                    
+                </div>
             </div>
-        </div>
 
-</div>
+        </div>
     </div>
 </form>
 
 <script>
     function urlChange() {
 
-        document.getElementById('AuthorIframe').src = '/Author/SearchAuthor?name=' + document.getElementById('authorName').value
+        document.getElementById('HorseIframe').src = '/Horse/SearchHorse?name=' + document.getElementById('horseName').value
     }
 </script>
 <script>
     function SendAuthor(input) {
         var id = input;
-        document.getElementById('authorId').value = id;
+        document.getElementById('horseId').value = id;
     }
 </script>
 <script>
     function changeIframe() {
-        document.getElementById('AuthorIframe').src = '/Author/Create';
+        document.getElementById('HorseIframe').src = '/Horse/Create';
 
     }
 </script>

@@ -28,6 +28,7 @@ namespace Hastprogrammet.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
                     HorseId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
