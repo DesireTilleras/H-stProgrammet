@@ -10,11 +10,11 @@
     </div>
     <form method="get">
         <div class="row justify-content-center">
-            <label><input class="form-control" type="text" name="SearchText" placeholder="Book/Author" /></label>
+            <label><input class="form-control" type="text" name="SearchText" placeholder="Horse" /></label>
         </div>
         <div class="row justify-content-center">
-            <input type="submit" class="btn btn-outline-info" value="Search Book" asp-controller="Book" asp-action="SearchBook" asp-route-myvar="SearchText" />
-            <input type="submit" class="btn btn-outline-info" value="Search Author" asp-controller="Author" asp-action="AuthorSearch" asp-route-myvar="SearchText" />
+            @*<input type="submit" class="btn btn-outline-info" value="Search EconomyPost" asp-controller="Economy" asp-action="HorseSearch" asp-route-myvar="SearchText" />*@
+            <input type="submit" class="btn btn-outline-info" value="Search Horse" asp-controller="Horse" asp-action="HorseSearch" asp-route-myvar="SearchText" />
         </div>
     </form>
 </div>

@@ -36,10 +36,10 @@ namespace Hastprogrammet.Controllers
             return View(horse);
 
         }
-        public IActionResult AuthorSearch(string SearchText)
+        public IActionResult HorseSearch(string SearchText)
         {
-            var authors = Context.Horses.Where(a => a.Name.Contains(SearchText));
-            return View(authors);
+            var horses = Context.Horses.Where(a => a.Name.Contains(SearchText));
+            return View(horses);
         }
         public IActionResult SearchHorse(string name)
         {            
@@ -54,6 +54,9 @@ namespace Hastprogrammet.Controllers
         public IActionResult HorseDetails(int id)
         {
             var horse = Context.Horses.FirstOrDefault(b => b.Id == id);
+            var economyPosts = Context.Economies.Where(b => b.HorseId == id).ToList();
+            ViewData["economyList"] = economyPosts;
+
             return View(horse);
 
         }

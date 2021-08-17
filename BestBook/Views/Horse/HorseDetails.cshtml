@@ -5,23 +5,24 @@
 
 
 <h1 style="text-align:center">@Model.Name</h1>
-<p style="text-align:center">Home town: @Model.Height</p>
+<p style="text-align:center">Mankhöjd: @Model.Height</p>
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="row justify-content-center" style="padding-top:1vh">
-            <input type="submit" class="btn btn-outline-info" name="editBook" value="Edit Author" onclick="location.href='@Url.Action("EditAuthor", "Author", new { id = Model.Id})'" />
-            <input type="submit" class="btn btn-outline-danger" name="deleteBook" value="Delete Author" onclick="location.href='@Url.Action("DeleteAuthor", "Author", new { id = Model.Id})'" />
-        </div>
+        <!--<div class="row justify-content-center" style="padding-top:1vh">-->
+            @*<input type="submit" class="btn btn-outline-info" name="editBook" value="Edit Author" onclick="location.href='@Url.Action("EditAuthor", "Author", new { id = Model.Id})'" />
+            <input type="submit" class="btn btn-outline-danger" name="deleteBook" value="Delete Author" onclick="location.href='@Url.Action("DeleteAuthor", "Author", new { id = Model.Id})'" />*@
+        <!--</div>-->
     </div>
 </div>
     <div class="row justify-content-center" style="padding-top:3vh">
       
-            @foreach (var post in ViewData["bookList"] as IEnumerable<Economy>)
+            @foreach (var post in ViewData["economyList"] as IEnumerable<Economy>)
             {
                 <div class="card" style="width:60vh;max-height:20vh;">
                     <div class="card-header">
                         <div class="col">
                             <b class="text-info">@post.Description</b>
+                            <b class="text-info">@post.Amount</b>
                         </div>
                     </div>
                 </div>
